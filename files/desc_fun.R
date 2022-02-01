@@ -1,7 +1,7 @@
 # Author: Masaru Nagashima
 # Affiliation: Waseda Institute for Advanced Study
 # Last Update: 2 Feb 2022
-# No copyright claimed. 
+# No copyright claimed. No support provided.
 # 
 # Example Usage: 
 #> names(tmp) # this is the temporary data; suppose you have four variables
@@ -21,7 +21,7 @@
 #+ 	"\\begin{tabular}{lccc@{\\extracolsep{4pt}}@{}ccc@{\\extracolsep{4pt}}@{}ccc@{\\extracolsep{4pt}}@{}ccc}",
 #+ 	"\\hline",
 #+ 	"& (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) & (9) & (10) & (11) & (12) \\\\",
-#+ 	"& \\multicolumn{3}{c}{BAIS I (2001)} & \\multicolumn{3}{c}{BAIS II (2004)} & \\multicolumn{3}{c}{BAIS III (2008)} & \\multicolumn{3}{c}{BAIS IV (2013)} \\\\",
+#+ 	"& \\multicolumn{3}{c}{Wave I} & \\multicolumn{3}{c}{Wave II} & \\multicolumn{3}{c}{Wave III} & \\multicolumn{3}{c}{Wave IV} \\\\",
 #+ 	"\\cline{2-4} \\cline{5-7} \\cline{8-10} \\cline{11-13}",
 #+ 	"& N & Mean & sd & N & Mean & sd & N & Mean & sd & N & Mean & sd \\\\",
 #+ 	"\\hline")
