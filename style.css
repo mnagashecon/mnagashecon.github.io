@@ -1,6 +1,7 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
 body {
-	background-color: #202040;
-	font-family: Courier, monospace;
+	background-color: #102040;
+	font-family: "Noto Sans", serif;
 	color: #F7F7F7;
 	padding: 0% 10% 0% 10%;
 }
@@ -19,11 +20,11 @@ ul {
 	padding: 0px 0px 9px 18px;
 }
 a {
-	color: #F0E0E0;
+	/* color: #F0E0E0; */
 	text-decoration: underline;
 }
 a:hover {
-	color: #F0E0E0;
+	/* color: #F0E0E0; */
 	text-decoration: none;
 }
 a:visited {
@@ -48,4 +49,7 @@ h3 {
 	font-size: medium;
 	font-weight: bold;
 	padding: 9px 0px 9px 0px;
+}
+div.goback {
+	padding: 9px 0px 0px 0px;
 }
