@@ -1,7 +1,7 @@
 # Author: Masaru Nagashima
 # Affiliation: Waseda Institute for Advanced Study
-# Last Update: 2 Feb 2022
-# No copyright claimed. No support provided.
+# Last Update: 27 Feb 2022
+# No copyright claimed. 
 # 
 # Example Usage: 
 #> names(tmp) # this is the temporary data; suppose you have four variables
@@ -49,14 +49,14 @@ getsumstats = function(df, ctgry=NULL, bnry=NULL) {
 	#   - if the variable is in bnry, "variablelabel: firstvaluelabel"
 	#   - if the variable is in both ctgry and bnry, the rule for ctgry applies
 	nms_df = names(df)
-	getn = function(x) sum(!is.na(x))
-	getmean = function(x) mean(x, na.rm=TRUE)
-	getsd = function(x) sd(x, na.rm=TRUE)
+	getn = function(x) sum(!is.na(unlist(x)))
+	getmean = function(x) mean(unlist(x), na.rm=TRUE)
+	getsd = function(x) sd(unlist(x), na.rm=TRUE)
 	ns = c(); means = c(); sds = c(); rnms = c();
 	for (i in 1:length(nms_df)) {
 		if (nms_df[i] %in% ctgry) {
-			lbl = attr(df[,i], "label")
-			lbls = attr(df[,i], "labels")
+			lbl = attr(df[[i]], "label")
+			lbls = attr(df[[i]], "labels")
 			txts = names(lbls)
 			n = c(); mean = c(); sd = c(); rnm = c();
 			for (j in 1:length(lbls)) {
@@ -66,34 +66,34 @@ getsumstats = function(df, ctgry=NULL, bnry=NULL) {
 					ifelse(!is.null(lbl),lbl,nms_df[i]), 
 					": ", 
 					ifelse(!is.null(txts_j),txts_j,as.character(lbls_j)))
-				vec_j = ifelse(df[,i]==lbls_j,1,ifelse(!is.na(df[,i]),0,NA))
+				vec_j = ifelse(df[[i]]==lbls_j,1,ifelse(!is.na(df[[i]]),0,NA))
 				n_j = getn(vec_j)
-				mean_j = mean(vec_j, na.rm = TRUE)
-				sd_j = sd(vec_j, na.rm = TRUE)
+				mean_j = getmean(vec_j)
+				sd_j = getsd(vec_j)
 				n = c(n, n_j)
 				mean = c(mean, mean_j)
 				sd = c(sd, sd_j)
 				rnm = c(rnm, rnm_j)
 			}
 		} else if (nms_df[i] %in% bnry) {
-			lbli = attr(df[,i], "label")
-			lbls = attr(df[,i], "labels")
+			lbli = attr(df[[i]], "label")
+			lbls = attr(df[[i]], "labels")
 			lbls1 = lbls[1]
 			txts1 = names(lbls)[1]
 			lbl = paste0(
 				ifelse(!is.null(lbli),lbli,nms_df[i]), 
 				": ", 
 				ifelse(!is.null(txts1),txts1,as.character(lbls1)))
-			vec = ifelse(df[,i]==lbls1,1,ifelse(!is.na(df[,i]),0,NA))
+			vec = ifelse(df[[i]]==lbls1,1,ifelse(!is.na(df[[i]]),0,NA))
 			n = getn(vec)
-			mean = mean(vec, na.rm = TRUE)
-			sd = sd(vec, na.rm = TRUE)
+			mean = getmean(vec)
+			sd = getsd(vec)
 			rnm = lbl
 		} else {
-			n = getn(df[,i])
-			mean = mean(df[,i], na.rm = TRUE)
-			sd = sd(df[,i], na.rm = TRUE)
-			lbl = attr(df[,i], "label")
+			n = getn(df[[i]])
+			mean = getmean(df[[i]])
+			sd = getsd(df[[i]])
+			lbl = attr(df[[i]], "label")
 			rnm = ifelse(!is.null(lbl),lbl,nms_df[i])
 		}
 		ns = c(ns, n)
