@@ -13,11 +13,11 @@ body {
 p {
 	font-size: medium;
 	font-weight: normal;
-	padding: 0px 0px 9px 0px;
+/*	padding: 0px 0px 0px 0px; */
 }
 ul {
-	list-style-type: square;
-	padding: 0px 0px 9px 18px;
+/*	list-style-type: disc; */
+	padding: 0px 0px 0px 18px;
 }
 a {
 	color: #F7F7F7;
@@ -31,23 +31,23 @@ a:visited {
 }
 h1 {
 	background: #000020;
-	font-size: large;
+	font-size: x-large;
 	font-weight: bold;
-	padding: 72px 18px 18px 18px;
+	padding: 36px 9px 9px 9px;
 }
 h2 {
 	color: #F0E0E0; 
 	font-size: large;
-	font-weight: normal;
-	padding: 18px 0px 18px 0px;
+	font-weight: bold;
+	padding: 18px 0px 9px 0px;
 	border-bottom: 1px solid;
 }
 h3 {
 	color: #F0E0E0; 
 	font-size: medium;
 	font-weight: bold;
-	padding: 9px 0px 9px 0px;
+	padding: 9px 0px 0px 0px;
 }
 div.goback {
-	padding: 9px 0px 0px 0px;
+	padding: 36px 0px 0px 0px;
 }
