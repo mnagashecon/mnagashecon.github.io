@@ -42,11 +42,27 @@ h2 {
 	padding: 18px 0px 9px 0px;
 	border-bottom: 1px solid;
 }
+.summaryh2 {
+	color: #F0E0E0; 
+	font-size: large;
+	font-weight: bold;
+	padding: 18px 0px 9px 0px;
+	border-bottom: 1px solid;
+}
 h3 {
 	color: #F0E0E0; 
 	font-size: medium;
 	font-weight: bold;
 	padding: 9px 0px 0px 0px;
+}
+.summaryh3 {
+	color: #F0E0E0; 
+	font-size: medium;
+	font-weight: bold;
+	padding: 0px 0px 0px 0px;
+}
+.bottompadding {
+	padding: 0px 0px 36px 0px
 }
 div.goback {
 	padding: 36px 0px 0px 0px;
